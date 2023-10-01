@@ -1,11 +1,13 @@
 name: Testing
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   testing:
-    runs-on: ubuntu-latests
+    runs-on: ubuntu-latest
     container:
       image: debian:stable-slim
 
