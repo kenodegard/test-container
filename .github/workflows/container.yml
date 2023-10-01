@@ -1,0 +1,14 @@
+name: Testing
+
+on:
+  workflow_dispatch:
+
+jobs:
+  testing:
+    runs-on: ubuntu-latests
+    container:
+      image: debian:stable-slim
+
+    steps:
+      - run: echo "hello world"
+        shell: bash
