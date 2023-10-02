@@ -9,7 +9,7 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     container:
-      image: debian:stable-slim
+      image: continuumio/miniconda3:latest
       options: --platform linux/arm64
 
     steps:
