@@ -11,7 +11,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image: [continuumio/miniconda3:latest, condaforge/miniforge3:latest]
+        image: ['continuumio/miniconda3:latest', 'condaforge/miniforge3:latest']
         platform: [arm64, ppc64le]
 
     steps:
