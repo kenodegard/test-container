@@ -24,14 +24,12 @@ jobs:
         uses: docker/setup-qemu-action@v2
 
       - name: Run Tests
-        run: |
-          docker run \
-            --rm \
-            --volume ${PWD}:/opt/conda-src \
-            --workdir /opt/conda-src \
-            --platform linux/${{ matrix.platform }} \
-            ${{ matrix.image }} \
-            sh <<-HEREDOC
-            conda info --verbose
-            conda list --show-channel-urls
-            HEREDOC
+        run: docker run
+          --rm
+          --volume ${PWD}:/opt/conda-src
+          --workdir /opt/conda-src
+          --platform linux/${{ matrix.platform }}
+          ${{ matrix.image }}
+          sh -c
+          "conda info --verbose
+          && conda list --show-channel-urls"
